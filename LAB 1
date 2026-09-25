@@ -594,13 +594,40 @@
     },
     {
       "cell_type": "code",
-      "execution_count": null,
+      "execution_count": 67,
       "metadata": {
-        "id": "PcIH2B2n9lxC"
+        "id": "PcIH2B2n9lxC",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "28fcdf70-412a-44da-9036-0e46d70b7c47"
       },
-      "outputs": [],
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Label: 10\n",
+            "Part: 20\n",
+            "Total: 20\n",
+            "10             : 20 of 20 = 100.0 %\n",
+            "Label: 20\n",
+            "Part: 20\n",
+            "Total: 40\n",
+            "20             : 20 of 40 = 50.0 %\n",
+            "Label: 40\n",
+            "Part: 40\n",
+            "Total: 80\n",
+            "40             : 40 of 80 = 50.0 %\n"
+          ]
+        }
+      ],
       "source": [
-        "\n"
+        "for i in range(3):\n",
+        "  label = input(\"Label: \")\n",
+        "  part = int(input(\"Part: \"))\n",
+        "  total = int(input(\"Total: \"))\n",
+        "  print(f\"{label:<15}: {part} of {total} = {(part/total)*100:.1f} %\")\n"
       ],
       "id": "PcIH2B2n9lxC"
     },
@@ -670,6 +697,56 @@
         "3. Show it to the person next to you.\n"
       ],
       "id": "WvDcF15R9lxC"
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "label = input(\"Dataset name: \")\n",
+        "first = float(input(\"Rows loaded: \"))\n",
+        "second = float(input(\"Rows expected: \"))\n",
+        "\n",
+        "difference = first - second\n",
+        "percent = (first / second) * 100\n",
+        "\n",
+        "print()\n",
+        "print(\"=\" * 34)\n",
+        "print(f\"  RECORD CHECK  -  {label}\")\n",
+        "print(\"=\" * 34)\n",
+        "print(f\"  {'Loaded':<12}: {first:>10.2f}\")\n",
+        "print(f\"  {'Expected':<12}: {second:>10.2f}\")\n",
+        "print(f\"  {'Difference':<12}: {difference:>+10.2f}\")\n",
+        "print(f\"  {'Percent':<12}: {percent:>10.2f} %\")\n",
+        "print(\"=\" * 34)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vyLqDZkmjhlD",
+        "outputId": "3e0b8849-7db5-4858-e42b-8c6a3febb8fd"
+      },
+      "id": "vyLqDZkmjhlD",
+      "execution_count": 65,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Dataset name: Riyaz\n",
+            "Rows loaded: 30\n",
+            "Rows expected: 80\n",
+            "\n",
+            "==================================\n",
+            "  RECORD CHECK  -  Riyaz\n",
+            "==================================\n",
+            "  Loaded      :      30.00\n",
+            "  Expected    :      80.00\n",
+            "  Difference  :     -50.00\n",
+            "  Percent     :      37.50 %\n",
+            "==================================\n"
+          ]
+        }
+      ]
     },
     {
       "cell_type": "markdown",
